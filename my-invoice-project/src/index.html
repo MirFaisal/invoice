@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchnat Invoice</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f0f0f0;
+        padding: 20px;
+      }
+
+      .invoice-container {
+        width: 484px;
+        height: 605px;
+        background: white;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .company-name {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .parcel-number {
+        font-size: 15px;
+        line-height: 1.3;
+      }
+
+      .barcode {
+        width: 100%;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .mp-id {
+        font-size: 16px;
+      }
+
+      .info-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .qr-code {
+        width: 130px;
+        height: 130px;
+        flex-shrink: 0;
+      }
+
+      .details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 5px;
+      }
+
+      .details span {
+        font-size: 15px;
+      }
+
+      .customer-info {
+        border: 1px solid #000;
+        padding: 12px;
+        margin: 15px 0;
+        font-size: 15px;
+      }
+
+      .customer-info p {
+        margin: 4px 0;
+        line-height: 1.4;
+      }
+
+      .cod-section {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #000;
+        padding: 12px 25px;
+        margin: 15px 0;
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      .footer {
+        margin-top: auto;
+      }
+
+      .timestamp {
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+
+      .website {
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-container">
+      <div class="header">
+        <h1 class="company-name">Merchnat</h1>
+        <div class="parcel-number">MOHAMMAD PARCEL<br />Number: 01684645670</div>
+        <img src="assets/barcode.png" alt="Barcode" class="barcode" />
+        <div class="mp-id">MP-ID : 142970246</div>
+      </div>
+
+      <div class="info-container">
+        <img src="assets/qr-code.svg" alt="QR Code" class="qr-code" />
+        <div class="details">
+          <span>Invoice : 51225</span>
+          <span>D. Type : Home</span>
+          <span>WGT : 0.6 KG</span>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <p>Name : Mohammad Faruk</p>
+        <p>Phone : 01723251225</p>
+        <p>Address : 123 Main Street<br />Dhaka, Bangladesh</p>
+      </div>
+
+      <div class="cod-section">
+        <span>COD</span>
+        <span>1250</span>
+      </div>
+
+      <div class="footer">
+        <p class="timestamp">P: 09/05/25 02:15pm</p>
+        <p class="website">WWW.MOHAMMADPARCEL.COM</p>
+      </div>
+    </div>
+  </body>
+</html>
