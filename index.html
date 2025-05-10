@@ -141,9 +141,58 @@
         text-align: center;
         margin-top: 5px;
       }
+
+      .print-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .print-button:hover {
+        background: #0056b3;
+      }
+
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        
+        .invoice-container,
+        .invoice-container * {
+          visibility: visible;
+        }
+
+        .invoice-container {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 400px;
+          margin: 0;
+          padding: 15px;
+          background: white;
+        }
+
+        .print-button {
+          display: none;
+        }
+
+        @page {
+          size: 80mm 120mm;
+          margin: 0;
+        }
+      }
     </style>
   </head>
   <body>
+    <button onclick="window.print()" class="print-button">Print Invoice</button>
     <div class="invoice-container">
       <img src="assets/logo.png" alt="Mohammad Parcel" class="logo" />
       <img src="assets/barcode.png" alt="Barcode" class="barcode" />
@@ -181,5 +230,19 @@
         <p class="website">www.mohammadparcel.com</p>
       </div>
     </div>
+
+    <script>
+      // Ensure proper printing orientation and scaling
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.matchMedia) {
+          var mediaQueryList = window.matchMedia('print');
+          mediaQueryList.addListener(function(mql) {
+            if (mql.matches) {
+              document.body.style.width = '350px';
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
