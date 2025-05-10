@@ -143,9 +143,6 @@
       }
 
       .print-button {
-        position: fixed;
-        top: 20px;
-        right: 20px;
         padding: 10px 20px;
         background: #007bff;
         color: white;
@@ -164,7 +161,7 @@
         body * {
           visibility: hidden;
         }
-        
+
         .invoice-container,
         .invoice-container * {
           visibility: visible;
@@ -174,10 +171,10 @@
           position: absolute;
           left: 0;
           top: 0;
-          width: 400px;
+          width: 420px; /* Increased width by 20px */
           height: auto;
           margin: 0;
-          padding: 15px;
+          padding: 20px; /* Increased padding */
           background: white;
         }
 
@@ -186,22 +183,35 @@
         }
 
         @page {
-          size: 80mm 100mm;  /* Reduced height from 120mm to 100mm */
+          size: 85mm 115mm; /* Slightly increased width and height */
           margin: 0;
         }
 
-        /* Compact spacing for print */
-        .merchant-info { margin: 3px 0; }
-        .section-title { margin: 3px 0; }
-        .customer-info { margin: 3px 0; padding: 8px; }
-        .cod-section { margin: 3px 0; }
-        .qr-section { margin: 8px 0; }
-        .footer { margin-top: 8px; }
+        /* Adjusted spacing for better readability */
+        .merchant-info {
+          margin: 5px 0;
+        }
+        .section-title {
+          margin: 5px 0;
+        }
+        .customer-info {
+          margin: 5px 0;
+          padding: 10px;
+        }
+        .cod-section {
+          margin: 5px 0;
+          padding: 3px 0;
+        }
+        .qr-section {
+          margin: 10px 0;
+        }
+        .footer {
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
   <body>
-    <button onclick="window.print()" class="print-button">Print Invoice</button>
     <div class="invoice-container">
       <img src="assets/logo.png" alt="Mohammad Parcel" class="logo" />
       <img src="assets/barcode.png" alt="Barcode" class="barcode" />
@@ -239,15 +249,17 @@
         <p class="website">www.mohammadparcel.com</p>
       </div>
     </div>
-
+    <div>
+      <button onclick="window.print()" class="print-button">Print Invoice</button>
+    </div>
     <script>
       // Ensure proper printing orientation and scaling
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         if (window.matchMedia) {
-          var mediaQueryList = window.matchMedia('print');
-          mediaQueryList.addListener(function(mql) {
+          var mediaQueryList = window.matchMedia("print");
+          mediaQueryList.addListener(function (mql) {
             if (mql.matches) {
-              document.body.style.width = '350px';
+              document.body.style.width = "350px";
             }
           });
         }
