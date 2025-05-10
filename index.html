@@ -175,6 +175,7 @@
           left: 0;
           top: 0;
           width: 400px;
+          height: auto;
           margin: 0;
           padding: 15px;
           background: white;
@@ -185,9 +186,17 @@
         }
 
         @page {
-          size: 80mm 120mm;
+          size: 80mm 100mm;  /* Reduced height from 120mm to 100mm */
           margin: 0;
         }
+
+        /* Compact spacing for print */
+        .merchant-info { margin: 3px 0; }
+        .section-title { margin: 3px 0; }
+        .customer-info { margin: 3px 0; padding: 8px; }
+        .cod-section { margin: 3px 0; }
+        .qr-section { margin: 8px 0; }
+        .footer { margin-top: 8px; }
       }
     </style>
   </head>
