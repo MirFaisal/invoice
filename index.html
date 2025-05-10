@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Merchnat Invoice</title>
+    <title>Mohammad Parcel Invoice</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
@@ -25,129 +25,152 @@
       }
 
       .invoice-container {
-        width: 484px;
-        height: 605px;
+        width: 350px;
         background: white;
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
+        padding: 20px;
       }
 
-      .header {
-        text-align: center;
-        margin-bottom: 15px;
-      }
-
-      .company-name {
-        font-size: 28px;
-        font-weight: 600;
-      }
-
-      .parcel-number {
-        font-size: 15px;
-        line-height: 1.3;
+      .logo {
+        width: 180px;
+        display: block;
+        margin: auto;
       }
 
       .barcode {
         width: 100%;
-        height: 60px;
-        object-fit: contain;
+        height: 40px;
       }
 
       .mp-id {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .merchant-info {
+        text-align: center;
+        margin: 5px 0;
+      }
+
+      .merchant-name {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .merchant-subname {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .merchant-number {
+        font-size: 13px;
+      }
+
+      .section-title {
         font-size: 16px;
-      }
-
-      .info-container {
-        width: 400px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-
-      .qr-code {
-        width: 130px;
-        height: 130px;
-        flex-shrink: 0;
-      }
-
-      .details {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding-top: 5px;
-      }
-
-      .details span {
-        font-size: 15px;
+        text-align: center;
+        margin: 5px 0 5px;
       }
 
       .customer-info {
-        border-radius: 10px;
         border: 1px solid #000;
-        padding: 0px 12px;
-        font-size: 15px;
+        border-radius: 4px;
+        padding: 10px;
         text-align: center;
       }
 
       .customer-info p {
         margin: 4px 0;
+        font-size: 13px;
         line-height: 1.4;
       }
 
       .cod-section {
-        border-radius: 10px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         border: 1px solid #000;
-        padding: 5px;
-        margin: 15px 0;
-        font-size: 17px;
-        font-weight: 600;
+        border-radius: 4px;
+        margin: 5px 0;
         position: relative;
+      }
+
+      .cod-section span {
+        flex: 1;
+        padding: 8px;
+        font-size: 14px;
+        text-align: center;
       }
 
       .cod-section::after {
         content: "";
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        bottom: 0;
         width: 1px;
-        height: 80%;
         background-color: #000;
       }
 
-      .footer {
-        margin-top: auto;
+      .qr-section {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 15px 0;
+        width: 90%;
+        margin: auto;
       }
 
-      .timestamp {
+      .qr-code {
+        width: 80px;
+        height: 80px;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 13px;
+      }
+
+      .footer {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        font-size: 13px;
-        margin-bottom: 5px;
+        align-items: flex-end;
+        margin-top: 15px;
+        font-size: 12px;
       }
 
       .website {
-        font-size: 15px;
-        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
         text-align: center;
+        margin-top: 5px;
       }
     </style>
   </head>
   <body>
     <div class="invoice-container">
-      <div class="header">
-        <h1 class="company-name">Merchnat</h1>
-        <div class="parcel-number">MOHAMMAD PARCEL<br />Number: 01684645670</div>
-        <img src="assets/barcode.png" alt="Barcode" class="barcode" />
-        <div class="mp-id">MP-ID : 142970246</div>
+      <img src="assets/logo.png" alt="Mohammad Parcel" class="logo" />
+      <img src="assets/barcode.png" alt="Barcode" class="barcode" />
+      <div class="mp-id">MP-ID : 142970246</div>
+
+      <div class="merchant-info">
+        <div class="merchant-name">MERCHNAT</div>
+        <div class="merchant-subname">Mh Fashion House</div>
+        <div class="merchant-number">Number: 01684645670</div>
       </div>
 
-      <div class="info-container">
+      <div class="section-title">CUSTOMER</div>
+      <div class="customer-info">
+        <p>Name : সামা আবেদীন</p>
+        <p>Phone : 01723251225</p>
+        <p>Address : shariatpur goshairhat<br />charshamontoshar</p>
+      </div>
+
+      <div class="cod-section">
+        <span>COD</span>
+        <span>850</span>
+      </div>
+
+      <div class="qr-section">
         <img src="assets/qr-code.svg" alt="QR Code" class="qr-code" />
         <div class="details">
           <span>Invoice : 51225</span>
@@ -156,28 +179,9 @@
         </div>
       </div>
 
-      <div class="customer-info">
-        <p>Name : Mohammad Faruk</p>
-        <p>Phone : 01723251225</p>
-        <p>Address : 123 Main Street<br />Dhaka, Bangladesh</p>
-      </div>
-
-      <div class="cod-section">
-        <span>COD</span>
-        <span>1250</span>
-      </div>
-
       <div class="footer">
-        <div class="timestamp">
-          <div>
-            <p>P: 09/05/25</p>
-            <p>02:15pm</p>
-          </div>
-          <div>
-            <img src="./assets/logo.png" alt="" />
-          </div>
-        </div>
-        <p class="website">WWW.MOHAMMADPARCEL.COM</p>
+        <p class="timestamp">P: 07/05/25 05:05pm</p>
+        <p class="website">www.mohammadparcel.com</p>
       </div>
     </div>
   </body>
